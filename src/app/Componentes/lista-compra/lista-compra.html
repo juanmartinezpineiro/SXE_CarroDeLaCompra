@@ -1,0 +1,36 @@
+<h2>LISTA DE PRODUCTOS</h2>
+<table style="width: 60%;">
+  <tr>
+  <td>
+<table style="width: 15%; border: 1px solid black;">
+
+
+  <tr *ngFor="let producto of productos; index as i;">
+    <td>
+      <button (click)="comprar(producto)">{{producto.titulo}}</button>
+    </td>
+  </tr>
+</table>
+  </td>
+<!__Contenedor con los productos elegidos_>
+<td>
+<div id="productosElegidos">
+  <h2>Productos dentro de la cesta</h2>
+  <div *ngFor="let producto of productos; index as i" id="productosElegidos">
+    <h3 *ngIf="productos[i].comprado">{{productos[i].titulo}}</h3>
+  </div>
+</div>
+</td>
+<!__Div con los productos no comprados __>
+  <td>
+<div id="productosNoElegidos">
+  <h2>Productos fuera de la cesta</h2>
+  <div *ngFor="let producto of productos; index as i" id="productosNoElegidos">
+    <h3 *ngIf="!productos[i].comprado">{{productos[i].titulo}}</h3>
+  </div>
+</div>
+  </td>
+</tr>
+</table>
+
+
