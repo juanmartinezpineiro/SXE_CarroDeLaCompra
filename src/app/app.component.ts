@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ServicioDeAutentServiceService} from './servicio-de-autent-service.service';
+import {FireDBService} from './fire-db.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CarroSXE';
+  constructor( public authComponent: ServicioDeAutentServiceService,
+               public dbApp: FireDBService) {
+  }
 }
